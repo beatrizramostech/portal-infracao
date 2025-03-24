@@ -1,0 +1,23 @@
+progress {
+  width: 100%; /* Largura total */
+  height: 20px; /* Altura da barra */
+  appearance: none; /* Remove estilos padrão do navegador */
+  -webkit-appearance: none; /* Remove estilos padrão no Chrome/Safari */
+}
+
+/* Estilo para navegadores baseados em WebKit (Chrome, Safari) */
+progress::-webkit-progress-bar {
+  background-color: #e0e0e0; /* Cor de fundo da barra */
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+progress::-webkit-progress-value {
+  background-color: #4caf50; /* Cor da parte preenchida */
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Estilo para navegadores baseados em Mozilla (Firefox) */
+progress::-moz-progress-bar {
+  background-color: #4caf50; /* Cor da parte preenchida */
+  border-radius: 10px; /* Bordas arredondadas */
+}
