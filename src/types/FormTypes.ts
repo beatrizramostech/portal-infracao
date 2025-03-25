@@ -3,7 +3,7 @@ export type FormICOData = {
 };
 
 export type FormContextType = {
-  data: unknown;
+  data: object;
   setData: (values: Partial<unknown>) => void;
   step: number;
   nextStep: () => void;

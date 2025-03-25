@@ -3,10 +3,10 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFormContext } from "../../contexts/FormContext";
+import "./Step2n3.css";
 
-// Esquema de validação
 const schema = z.object({
-  orgaoAutuador: z.string().min(3, "Órgão Autuador obrigatório"),
+  orgaoAutuador: z.enum(["DETRAN-ES", "PRF", "PREFEITURA", "Polícia Militar"]),
   numeroAIT: z.string().min(1, "Número do AIT obrigatório"),
 });
 
@@ -25,25 +25,36 @@ export const Step2 = () => {
 
   const onSubmit = (values: Step2FormData) => {
     setData({ ...data, ...values });
+    console.log(errors);
+
     nextStep();
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="formAIT">
       <h2>Validar AIT</h2>
 
       <label>Órgão Autuador:</label>
-      <input type="text" {...register("orgaoAutuador")} />
+      <select {...register("orgaoAutuador")}>
+        <option value="DETRAN-ES">DETRAN-ES</option>
+        <option value="PRF">PRF</option>
+        <option value="PREFEITURA">PREFEITURA</option>
+        <option value="Polícia Militar">Polícia Militar</option>
+      </select>
       {errors.orgaoAutuador && <p>{errors.orgaoAutuador.message}</p>}
 
       <label>Nº do AIT:</label>
-      <input type="text" {...register("numeroAIT")} />
+      <input type="text" {...register("numeroAIT")} className="teste" />
       {errors.numeroAIT && <p>{errors.numeroAIT.message}</p>}
 
-      <button type="button" onClick={() => prevStep()}>
-        Voltar
-      </button>
-      <button type="submit">Próximo</button>
+      <div className="buttons-form">
+        <button type="button" onClick={() => prevStep()} className="info">
+          Voltar
+        </button>
+        <button type="submit" className="primario">
+          Próximo
+        </button>
+      </div>
     </form>
   );
 };

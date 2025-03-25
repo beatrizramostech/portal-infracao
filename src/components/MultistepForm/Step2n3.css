@@ -1,0 +1,17 @@
+.formAIT,
+.formTipoPessoa {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.buttons-form {
+  width: 280px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.teste {
+  max-width: 300px;
+}

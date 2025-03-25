@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFormContext } from "../../contexts/FormContext";
+import "./Step2n3.css";
 
 const schema = z.object({
   tipoPessoa: z.enum([
@@ -32,7 +33,7 @@ export const Step3 = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="formTipoPessoa">
       <h2>Tipo de Pessoa</h2>
       <label>Escolha a opção:</label>
       <select {...register("tipoPessoa")}>
@@ -43,10 +44,14 @@ export const Step3 = () => {
       </select>
       {errors.tipoPessoa && <p>{errors.tipoPessoa.message}</p>}
 
-      <button type="button" onClick={prevStep}>
-        Voltar
-      </button>
-      <button type="submit">Próximo</button>
+      <div className="buttons-form">
+        <button type="button" onClick={() => prevStep()} className="info">
+          Voltar
+        </button>
+        <button type="submit" className="primario">
+          Próximo
+        </button>
+      </div>
     </form>
   );
 };

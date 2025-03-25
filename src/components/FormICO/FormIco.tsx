@@ -1,7 +1,14 @@
 import React from "react";
+import { Stepper } from "./Stepper";
 
 const FormIco = () => {
-  return <div>FormIco</div>;
+  return (
+    <>
+      <section className="container">
+        <Stepper />
+      </section>
+    </>
+  );
 };
 
 export default FormIco;

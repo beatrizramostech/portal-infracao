@@ -1,10 +1,10 @@
 import React from "react";
-import { Step1 } from "./Step1";
-import { Step2 } from "./Step2";
-import { Step3 } from "./Step3";
+import { Step1 } from "../MultistepForm/Step1";
+import { Step2 } from "../MultistepForm/Step2";
+import { Step3 } from "../MultistepForm/Step3";
 import { useFormContext } from "../../contexts/FormContext";
-import { Step4 } from "./Step4";
-import { Step5 } from "./Step5";
+import { Step4 } from "../MultistepForm/Step4";
+import { Step5 } from "../MultistepForm/Step5";
 import "./Progress.css";
 
 export const Stepper = () => {

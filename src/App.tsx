@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import { FormProvider } from "./contexts/FormProvider";
-import { Stepper } from "./components/FormICO/Stepper";
+import FormIco from "./components/FormICO/FormIco";
 function App() {
   return (
     <>
@@ -10,7 +10,7 @@ function App() {
       <FormProvider>
         <div className="container">
           <h1>Cadastro</h1>
-          <Stepper />
+          <FormIco />
         </div>
       </FormProvider>
     </>
